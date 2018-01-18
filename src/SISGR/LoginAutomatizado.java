@@ -13,9 +13,13 @@ package SISGR;
 		@Test
 	    public void deveFazerLogin() {
 	        // abre firefox
-	    	WebDriver driver;
-	    	System.setProperty("webdriver.gecko.driver", "C:\\SeleniumGecko\\geckodriver.exe");
-	    	driver =new FirefoxDriver();
+	    	//WebDriver driver;
+	    	//System.setProperty("webdriver.gecko.driver", "C:\\SeleniumGecko\\geckodriver.exe");
+	    	//driver =new FirefoxDriver();
+	    	
+	    	
+	    	WebDriver driver = new FirefoxDriver();
+
 
 	        // acessa o site do google
 	        driver.get("http://dev.lti.net.br/sisgr/auth/login");
@@ -34,6 +38,7 @@ package SISGR;
 	        boolean achouNome = driver.getPageSource().contains("ADMIN");
 	        
 	        assertTrue(achouNome);
+	        
 	        
 	        
 	        driver.close();

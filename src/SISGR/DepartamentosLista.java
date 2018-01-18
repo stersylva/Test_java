@@ -25,7 +25,7 @@ public DepartamentosLista(WebDriver driver) {
 	}
 	
 	public void novo() {
-		driver.findElement(By.linkText("Departamento"));
+		driver.findElement(By.linkText("Departamento")).click();
 	}
 	
 	public boolean exixteNaListagem(String nome) {

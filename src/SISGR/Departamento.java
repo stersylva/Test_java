@@ -18,18 +18,27 @@ public class Departamento {
 	public void inicializa() {
 		System.setProperty("webdriver.gecko.driver", "C:\\SeleniumGecko\\geckodriver.exe");
     	driver =new FirefoxDriver();
+    	driver.get("http://dev.lti.net.br/sisgr/departamentos/novo");
 	}
 	@Test
 	public void deveAdicionarUmDepartamento() {
-        // acessa o site do google
-        driver.get("http://dev.lti.net.br/sisgr/departamentos/novo");
+        
+		departamentos.novo().cadastra("Departamento teste");
 		
-		WebElement Camponome = driver.findElement(By.name("nome"));
-			Camponome.sendKeys("Departamento teste");
+		assertTrue(departamentos.existeNaListagem("Departamento teste"));
+		
+		//WebElement Camponome = driver.findElement(By.name("nome"));
+		//WebElement btnSalvar = driver.findElement(By.className("btn btn-primary"));
+		
+			//Camponome.sendKeys("Departamento teste");
 			
-		Camponome.submit();
+		//btnSalvar.click();
 		
-		assertTrue(driver.getPageSource().contains("Departamento teste"));
+	
+		 //boolean achouNome = driver.getPageSource().contains("Departamento teste");
+		 //assertTrue(achouNome);
+		
+		
 	}
 	@After
 	public void encerra() {
