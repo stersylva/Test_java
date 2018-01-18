@@ -12,7 +12,7 @@ public class NovoDepartamentoPage {
 		this.driver = driver;
 	}
 	
-	public void cadastra(String nome, String email) {
+	public void cadastra(String nome) {
 		
 		WebElement txtnome = driver.findElement(By.name("nome"));
 		
